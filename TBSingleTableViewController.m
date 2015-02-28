@@ -38,6 +38,18 @@
 }
 
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *cellIdentifier = @"cellSignleTableView";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    if (!cell) {
+        [tableView registerNib:self.cellNib forCellReuseIdentifier:cellIdentifier];
+        
+        cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    }
+    return cell.frame.size.height;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *cellIdentifier = @"cellSignleTableView";

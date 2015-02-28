@@ -10,7 +10,7 @@
 
 typedef void(^rowClick)(NSIndexPath *indexPath);
 
-@interface TBSingleTableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface TBSingleTableViewController : TBBaseViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) UINib *cellNib;
 
